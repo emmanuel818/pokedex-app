@@ -1,5 +1,6 @@
-alert('Hello World');
-
-//practicing variables and values added favorite food
-let favoriteFood = "Steak";
-document.write(favoriteFood);
+//pokedex array
+let pokemonList = [
+  {name:'Bulbasaur', height: .7, types: ['grass','poison']},
+  {name:'Charmander', height: .6, types: 'fire'},
+  {name:'Squirtle', height: .5, types: 'water'},  
+];
