@@ -1,6 +1,7 @@
 //pokedex array
 let pokemonList = [
-  { name:'Bulbasaur',
+  {
+    name:'Bulbasaur',
     height: .7,
     type: ['grass', 'poison']
   },
@@ -14,12 +15,13 @@ let pokemonList = [
     height: .5,
     type: ['water']
   }
-];
+]
 
 for (let i=0; i < pokemonList.lenght; i++) {
-  document.write(pokemonList[i].name + 'Height - ' + pokemonList[i].height)
-  console.log(pokemonList[i].name + 'Height - ' + pokemonList[i].height)
+  document.write(pokemonList[i].name + 'Height: ' + pokemonList[i].height)
+  console.log(pokemonList[i].name + 'Height: ' + pokemonList[i].height)
   if ([pokemonList[i].height] > 1.0) {
     document.write('Wow this Pokemon is big!')
   }
+  document.write('<br>');
 }
