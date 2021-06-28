@@ -1,20 +1,25 @@
 //pokedex array
 let pokemonList = [
-  { name:
-    'Bulbasaur',
+  { name:'Bulbasaur',
     height: .7,
     type: ['grass', 'poison']
   },
   {
-    name: 'Charmander',
-    height: .6,
-    type: 'fire'
+    name: 'Charizard',
+    height: 1.7,
+    type: ['fire', 'flying']
   },
   {
     name: 'Squirtle',
     height: .5,
-    type: 'water'
-  },
+    type: ['water']
+  }
 ];
 
-document.write(pokemonList);
+for (let i=0; i < pokemonList.lenght; i++) {
+  document.write(pokemonList[i].name + 'Height - ' + pokemonList[i].height)
+  console.log(pokemonList[i].name + 'Height - ' + pokemonList[i].height)
+} if ([pokemonList[i].height] > 1.0) {
+    document.write('Wow this Pokemon is big!')
+  }
+}
