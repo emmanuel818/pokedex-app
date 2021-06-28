@@ -17,11 +17,11 @@ let pokemonList = [
   }
 ]
 
-for (let i=0; i < pokemonList.lenght; i++) {
-  document.write(pokemonList[i].name + 'Height: ' + pokemonList[i].height)
-  console.log(pokemonList[i].name + 'Height: ' + pokemonList[i].height)
-  if ([pokemonList[i].height] > 1.0) {
-    document.write('Wow this Pokemon is big!')
+for (let i=0; i < pokemonList.length; i++) {
+  document.write(pokemonList[i].name + '  Height:  ' + pokemonList[i].height)
+  console.log(pokemonList[i].name + '  Height:  ' + pokemonList[i].height)
+  if (pokemonList[i].height > 1.0) {
+    document.write('  Wow that is a big Pokemon!')
   }
-  document.write('<br>');
+  document.write('<br>')
 }
