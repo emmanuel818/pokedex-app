@@ -1,5 +1,8 @@
 * {
   box-sizing:border-box;
-  marging: 20px;
-  background-color: #063970; 
+  background-color: #063970;
+}
+
+body {
+  margin: 20px;
 }
