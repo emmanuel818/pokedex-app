@@ -4,7 +4,7 @@
 }
 
 body {
-  margin: 20px;
+  margin: 10px;
 }
 
 img {
@@ -19,4 +19,11 @@ img {
   margin: auto;
   border-bottom: 2px solid black;
   clear:both;
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  color: white;
 }
