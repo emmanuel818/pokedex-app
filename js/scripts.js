@@ -11,6 +11,8 @@ let pokemonRepository = (function () {
     pokeName.classList.add('Pokename');
   let pokeHeight = document.createElement('p');
     pokeHeight.classList.add('Pokeheight');
+  let pokeType = document.createElement('p');
+    pokeType.classList.add('Poketype');
 
   let imageContainer = document.createElement('div');
     imageContainer.classList.add('image-container');
@@ -79,6 +81,7 @@ let pokemonRepository = (function () {
     loadDetails(item).then(function () {
       pokeName.innerHTML = item.name.toUpperCase();
       pokeHeight.innerHTML = 'Height: ' + item.height;
+      pokeType.innerHTML = 'Type: ' + item.types.toUpperCase();
       pokeImage.src = item.imageUrl;
       modalClose.innerHTML = 'Close';
       showModal();
@@ -87,6 +90,7 @@ let pokemonRepository = (function () {
     modal.appendChild(modalClose);
     modal.appendChild(pokeName);
     modal.appendChild(pokeHeight);
+    modal.appendChild(pokeType);
     modal.appendChild(imageContainer);
     imageContainer.appendChild(pokeImage);
   }
@@ -115,7 +119,7 @@ let pokemonRepository = (function () {
     }).then(function (details) {
       item.imageUrl = details.sprites.front_default;
       item.height = details.height;
-      item.types = details.types;
+      item.types = details.types[0].type.name;
     }).catch(function (e) {
       console.error(e);
     });
@@ -128,10 +132,6 @@ let pokemonRepository = (function () {
     getAll: getAll,
     addListItem: addListItem,
     loadList: loadList,
-    loadDetails: loadDetails,
-    showDetails: showDetails,
-    showModal: showModal,
-    hideModal: hideModal
   };
 })();
 
