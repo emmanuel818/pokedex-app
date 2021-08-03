@@ -1,5 +1,24 @@
 //wrapped  my array in an IIFE to avoid accessing the global state.
 let pokemonRepository = (function () {
+  //create a modal
+  let pokedexPokemonList = document.querySelector('.pokemon-list');
+  let modalContainer = document.querySelector('#modal-container');
+  let modal = document.querySelector('.modal');
+
+  let modalClose = document.createElement('button');
+    modalClose.classList.add('modal-close');
+  let pokeName = document.createElement('h1');
+    pokeName.classList.add('Pokename');
+  let pokeHeight = document.createElement('p');
+    pokeHeight.classList.add('Pokeheight');
+
+  let imageContainer = document.createElement('div');
+    imageContainer.classList.add('image-container');
+  let pokeImage = document.createElement('img');
+    pokeImage.classList.add('Pokeimage');
+
+
+
   let pokemonList = [];
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=20';
 
@@ -32,6 +51,46 @@ let pokemonRepository = (function () {
     });
   }
 
+  function showModal() {
+    modalContainer.classList.add('is-visible');
+  }
+
+  function hideModal() {
+    modalContainer.classList.remove('is-visible');
+  }
+
+  modalClose.addEventListener('click', hideModal);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+      hideModal();
+    }
+  });
+
+  modalContainer.addEventListener('click', (e) => {
+    let target = e.target;
+    if (target === modalContainer) {
+      hideModal();
+    }
+  });
+
+
+  function showDetails(item) {
+    loadDetails(item).then(function () {
+      pokeName.innerHTML = item.name.toUpperCase();
+      pokeHeight.innerHTML = 'Height: ' + item.height;
+      pokeImage.src = item.imageUrl;
+      modalClose.innerHTML = 'Close';
+      showModal();
+  });
+
+    modal.appendChild(modalClose);
+    modal.appendChild(pokeName);
+    modal.appendChild(pokeHeight);
+    modal.appendChild(imageContainer);
+    imageContainer.appendChild(pokeImage);
+  }
+
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -42,7 +101,6 @@ let pokemonRepository = (function () {
           detailsUrl: item.url
         };
         add(pokemon);
-        console.log(pokemon);
       });
     }).catch(function (e) {
       console.error(e);
@@ -63,11 +121,7 @@ let pokemonRepository = (function () {
     });
   }
 
-  function showDetails(item) {
-    pokemonRepository.loadDetails(item).then(function () {
-      console.log(item);
-    });
-  }
+
 
   return {
     add: add,
@@ -75,7 +129,9 @@ let pokemonRepository = (function () {
     addListItem: addListItem,
     loadList: loadList,
     loadDetails: loadDetails,
-    showDetails: showDetails
+    showDetails: showDetails,
+    showModal: showModal,
+    hideModal: hideModal
   };
 })();
 
