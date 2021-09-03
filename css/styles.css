@@ -1,31 +1,22 @@
-* {
-  box-sizing:border-box;
+/* {
   background-color: #063970;
-}
+}*/
 
-body {
+/*body {
   margin: 10px;
-}
+}*/
 
 img {
   width: 100px;
   height: 100px;
 }
 
-.page-header {
-  display: flex;
-  width: 100%;
-  padding: 20px;
-  margin: auto;
-  border-bottom: 2px solid black;
-  clear:both;
-}
 
 h1 {
   font-family: 'Permanent Marker', cursive, sans-serif;
   font-weight: 400;
   font-size: 30px;
-  color: white;
+  color: black;
 }
 
 p {
@@ -34,7 +25,8 @@ p {
   text-align: center;
   justify-content: center;
 }
-.button-class {
+
+.button {
   background-color: black;
   border: 1px;
   color: white;
@@ -50,6 +42,7 @@ p {
   font-family: 'Permanent Marker', cursive, sans-serif;
 }
 
+
 .pokemon-list {
   list-style-type: none;
   text-align: center;
@@ -59,80 +52,28 @@ p {
   margin: 50px 10px;
 }
 
-
-#modal-container {
-  display: none;
-  background-color: inherit;
+.content {
+  background-color: #063970;
+  margin-top: 60px;
 }
 
-#modal-container.is-visible {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: none;
-  z-index: 999;
-  overflow: auto;
-  display: grid;
-  text-align: center;
+.navbar-brand {
+  font-family: 'Permanent Marker', cursive, sans-serif;
+  font-size: 30px;
 }
 
-.modal {
-  margin: auto;
-  display: inline-block;
-  box-sizing: border-box;
-  background: red;
-  padding: 15px;
-  width: 100%;
-  max-width: 700px;
-  text-align: left;
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: black;
-  text-decoration: ;
-  cursor: pointer;
-}
-
-.modal h1 {
-  margin-top: 0;
-  background: red;
-}
-
-.modal p {
-  margin-bottom: 0;
-  background: red;
-}
-
-.img-container {
-  display: grid;
-  justify-content: center;
-}
 
 @media all and (max-width: 500px) {
   .pokemon-list {
-    -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
 }
 @media all and (min-width: 500px) and (max-width: 750px) {
   .pokemon-list {
-    -ms-grid-columns: 1fr 20px 1fr;
     grid-template-columns: 1fr 1fr;
   }
 }
 @media all and (max-width: 750px) {
-  .pokemon-list.project-list {
+  .pokemon-list {
     grid-gap: 10px;
-  }
-  .pokemon-list__item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
   }
