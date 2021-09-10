@@ -11,7 +11,6 @@ img {
   height: 100px;
 }
 
-
 h1 {
   font-family: 'Permanent Marker', cursive, sans-serif;
   font-weight: 400;
@@ -42,11 +41,10 @@ p {
   font-family: 'Permanent Marker', cursive, sans-serif;
 }
 
-
 .pokemon-list {
   list-style-type: none;
   text-align: center;
-  display:grid;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 20px;
   margin: 50px 10px;
@@ -62,7 +60,6 @@ p {
   font-size: 30px;
 }
 
-
 @media all and (max-width: 500px) {
   .pokemon-list {
     grid-template-columns: 1fr;
@@ -77,3 +74,4 @@ p {
   .pokemon-list {
     grid-gap: 10px;
   }
+}
