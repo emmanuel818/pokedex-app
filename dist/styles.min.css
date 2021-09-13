@@ -1,3 +1,6 @@
+body {
+  margin-top: none;
+}
 img {
   width: 100px;
   height: 100px;
@@ -39,7 +42,7 @@ p {
 }
 .content {
   background-color: #063970;
-  margin-top: 60px;
+  margin-top: none;
 }
 .navbar-brand {
   font-family: 'Permanent Marker', cursive, sans-serif;
@@ -59,4 +62,7 @@ p {
   .pokemon-list {
     grid-gap: 10px;
   }
+}
+.fixed-top {
+  position: sticky;
 }

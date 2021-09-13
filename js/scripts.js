@@ -120,7 +120,8 @@ let pokemonRepository = (function() {
     weightElement.innerText = 'Weight: ' + pokemon.weight;
     // creating element for types in modal content
     let typesElement = document.createElement('p');
-    typesElement.innerText = pokemon.types.map(pokemon => pokemon.type.name);
+    typesElement.innerText =
+      'Types: ' + pokemon.types.map(pokemon => pokemon.type.name).join(', ');
 
     modalTitle.append(nameElement);
     modalBody.append(imageElement);
@@ -131,11 +132,13 @@ let pokemonRepository = (function() {
 
   // add event listener to my search bar
   searchInput.addEventListener('input', function() {
-    let pokeList = document.querySelectorAll('li');
+    let pokeList = document.querySelectorAll('ul.pokemon-list li');
     let value = searchInput.value.toUpperCase();
 
     pokeList.forEach(function(pokemon) {
-      if (pokemon.innerText.toUpperCase().indexOf(value) < 0) {
+      if (pokemon.innerText.toUpperCase().indexOf(value) > -1) {
+        pokemon.style.display = 'list-item';
+      } else {
         pokemon.style.display = 'none';
       }
     });
